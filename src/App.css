@@ -1,28 +1,67 @@
-
+@import 'https://fonts.googleapis.com/css?family=Share+Tech+Mono';
+@font-face {
+  font-family: 'Digital';
+  src: url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix')
+      format('embedded-opentype'),
+    url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2')
+      format('woff2'),
+    url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7')
+      format('svg');
+}
 
 .App {
   text-align: center;
   margin: 0;
-  
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255,255, 0));
+  backdrop-filter: blur(20px);
+  border-radius: 5px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 #root {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 24rem;
+  font-family: Share Tech Mono, monospace;
+  font-size: 1.25rem;
+}
+
+.outputSc{
+  font-size: 1.8125rem;
+  text-align: right;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  font-family: 'Digital';
+}
+
+.formulaSc{
+  text-align: right;
+  min-height: 1.25rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  font-family: 'Digital';
 }
 
 .con{
   background-color: cyan;
 }
-
+.auth{
+  font-size: 16px;
+  color: #00264d;
+}
+#dev{
+  text-decoration: none;
+  color: #00264d;
+}
 .calculator .button{
   height: 65px;
   color: black;
   border-radius: 0px;
+  font-family: Share Tech Mono, monospace;
+  font-size: 1.25rem;
 }
-.calculator .btn-c{
-  height: 130px;
+.calculator .button:hover{
+  color: #fff;
   
 }
 
@@ -48,4 +87,77 @@ body {
   100% {
     background-position: 0% 50%;
   }
+}
+/* =================== */
+.boxes{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+.boxes div{
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: #e6ff06;
+  top: -150px;
+  animation: floating 25s linear infinite;
+}
+
+@keyframes floating {
+0% 
+  { 
+      opacity: 1;
+      border-radius: 0;
+      transform: translateY(0) rotate(0deg);
+  }
+100% 
+  { 
+      opacity: 0;
+      border-radius: 50%;
+      transform: translateY(1000px) rotate(720deg);
+  }
+}
+
+.boxes div:nth-child(1){
+  left: 55%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+.boxes div:nth-child(2){
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+.boxes div:nth-child(3){
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 4s;
+}
+.boxes div:nth-child(4){
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+.boxes div:nth-child(5){
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 0s;
+}
+.boxes div:nth-child(6){
+  left: 45%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3s;
 }
